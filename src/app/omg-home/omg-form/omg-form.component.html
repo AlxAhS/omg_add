@@ -1,0 +1,45 @@
+<h4 class="offset-2 mb-4">Client form</h4>
+<form (submit)="submit()" [formGroup]="registerForm">
+    <div class="form-group row text-right offset-md-1">
+        <label for="date" class="col-sm-2 col-form-label">DATE</label>
+        <div class="col-sm-4">
+            <input type="datetime-local" name="date" #date id="date" class="form-control" placeholder="Date" formControlName="date">
+        </div>
+    </div>
+    
+    <div class="form-group row text-right offset-md-1">
+        <label for="clientName" class="col-sm-2 col-form-label">CLIENT NAME</label>
+        <div class="col-sm-4">
+            <input type="text" name="clientName" #clientName id="clientName" class="form-control" placeholder="Full Name" formControlName="clientName">
+        </div>
+    </div>
+    
+    <div class="form-group row text-right offset-md-1">
+        <label for="idClient" class="col-sm-2 col-form-label">ID</label>
+        <div class="col-sm-4">
+            <input type="text" name="idClient" #idClient id="idClient" class="form-control" placeholder=" NIT / CC " formControlName="idClient">
+        </div>
+    </div>
+    
+    <div class="form-group row text-right offset-md-1">
+        <label for="value" class="col-sm-2 col-form-label">TOTAL VALUE</label>
+        <div class="col-sm-4">
+            <input type="text" name="value" #value id="value" class="form-control" placeholder=" $ (COP)" formControlName="value">
+        </div>
+    </div>
+    
+    <div class="form-group row text-right offset-md-1">
+        <label for="product"class="col-sm-2 col-form-label mb-4">PRODUCT</label>
+        <div class="col-sm-4">
+            <input type="text" name="product" #product id="product" class="form-control" placeholder="Description" formControlName="product">
+        </div>
+    </div>
+
+    <div class="form row">
+        <button type="submit" class="btn btn-success col-md-1 offset-2">Submit</button>
+        <button type="button" class="btn btn-success col-md-1 offset-1" (click)="downloadAsPDF()">Generate PDF</button>
+        <button type="button" class="btn btn-success col-md-1 offset-1" (click)="refresh()">Refresh</button>
+    </div>
+       
+</form>
+  
